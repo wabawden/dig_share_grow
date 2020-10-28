@@ -1,2 +1,63 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="main-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'carrots.jpg', crop: :cover %>);">
+  <h1>Join the social growing community</h1>
+  <%= link_to locations_path do %>
+    <button type="button" class="btn btn-outline-light m-5">Find out more</button>
+  <% end %>
+</div>
+
+<div class="container">
+  <div class="article-block d-flex my-2">
+    <div>
+      <%= image_tag('tomatoes.jpg', size: "400x300" ) %>
+    </div>
+    <div class="d-flex align-items-center">
+      <div>
+        <h3 class="m-1">At DigShareGrow, you'll find a friendly community of expert and novice growers willing to share their time and experience to help you learn new skills, get more from your allotment or simply enjoy growing fresh produce.</h3>
+          <%= link_to locations_path do %>
+            <button type="button" class="btn btn-outline-light m-1 mt-5">How it works</button>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="article-block my-5 text-center">
+    <h1>View nearby opportunities</h1>
+    <div class="d-flex flex-wrap justify-content-between mt-5">
+      <% @locations.each do |location| %>
+        <%= link_to location_path(location) do %>
+          <div class="p-1 m-1 card d-flex flex-column justify-content-end" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path location.photos.first.key, height: 250, width: 300, crop: :fill %>'); height: 250px; width: 300px">
+            <div class="card-info"><h2><%= location.name %></h2></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%= link_to locations_path do %>
+      <button type="button" class="btn btn-outline-light m-1 mt-5">View all allotments</button>
+    <% end %>
+  </div>
+</div>
+<div class="blue-canvas">
+  <div class="container">
+    <div class="text-center pt-5 pb-2">
+      <h1>Need another pair of hands?</h1>
+    </div>
+    <div class="article-block d-flex my-2">
+      <div class="d-flex align-items-center">
+        <div>
+        <h3 class="m-1"></h3>
+          <%= link_to locations_path do %>
+            <button type="button" class="btn btn-outline-light m-1 mt-5">How it works</button>
+          <% end %>
+      </div>
+      </div>
+      <div>
+        <%= image_tag('vegbox.jpg', size: "400x300" ) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

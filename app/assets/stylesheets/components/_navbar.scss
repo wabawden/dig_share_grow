@@ -1,6 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $blue;
+  h3 {
+    font-family: "Sue Ellen Francisco";
+    color: $light-gray;
+  }
+  font-family: "Roboto Condensed", sans-serif;
+  a {
+    color: $light-gray;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
